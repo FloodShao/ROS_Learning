@@ -1,0 +1,614 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"exe",
+				"exec_depend"
+			],
+			[
+				"biu",
+				"build_export_depend"
+			],
+			[
+				"build_",
+				"build_export_depend"
+			],
+			[
+				"angul",
+				"angular_velocity\tstd_msgs::Float32"
+			],
+			[
+				"linear",
+				"linear_velocity\tstd_msgs::Float32"
+			],
+			[
+				"control_",
+				"control_signel_angle_pub\tros::Publisher"
+			],
+			[
+				"error_",
+				"error_forward_pub\tint"
+			],
+			[
+				"error_angl",
+				"error_angle_prev\tdouble"
+			],
+			[
+				"error_for",
+				"error_forward_prev\tdouble"
+			],
+			[
+				"error",
+				"error_angle\tdouble"
+			],
+			[
+				"tran",
+				"trans_z\tdouble"
+			],
+			[
+				"ad",
+				"advertiseService(const std::string &service, bool (*srv_func)(MReq &, MRes &))\tros::ServiceServer"
+			],
+			[
+				"Servi",
+				"ServiceServer\tclass"
+			],
+			[
+				"Re",
+				"Response\ttypedef"
+			],
+			[
+				"la",
+				"laser_enabled"
+			],
+			[
+				"vis",
+				"vis_pub_\tros::Publisher"
+			],
+			[
+				"node",
+				"nodeHandle_\tros::NodeHandle"
+			],
+			[
+				"Pub",
+				"Publisher\tclass"
+			],
+			[
+				"subscribe",
+				"subscribe<class M>(const std::string &topic, uint32_t queue_size, const boost::function<void (C)> &callback)\tros::Subscriber"
+			],
+			[
+				"husk",
+				"huskyTwistTopic_\tstd::string"
+			],
+			[
+				"advertise",
+				"advertise<class M>(const std::string &topic, uint32_t queue_size)\tros::Publisher"
+			],
+			[
+				"p_g",
+				"p_gain_angle\tfloat"
+			],
+			[
+				"publ",
+				"Publisher\tclass"
+			],
+			[
+				"ROS_ERR",
+				"ROS_ERROR(...)\tmacro"
+			],
+			[
+				"ROS_INF",
+				"ROS_INFO(...)\tmacro"
+			],
+			[
+				"an",
+				"angle_min\t_angle_min_type"
+			],
+			[
+				"hus",
+				"husky_close_control"
+			],
+			[
+				"getP",
+				"getParameters"
+			],
+			[
+				"subs",
+				"subscriberTopic_"
+			],
+			[
+				"sc",
+				"scan_msg"
+			],
+			[
+				"scan",
+				"scanCallback"
+			],
+			[
+				"teleop",
+				"teleop_twist_keyboard"
+			],
+			[
+				"world",
+				"world_name"
+			],
+			[
+				"wor",
+				"world_name"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 6943,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?xml version=\"1.0\"?>\n<package format=\"2\">\n  <name>ee3305_pid_control</name>\n  <version>0.0.0</version>\n  <description>The ee3305_pid_control package</description>\n\n  <!-- One maintainer tag required, multiple allowed, one person per tag -->\n  <!-- Example:  -->\n  <!-- <maintainer email=\"jane.doe@example.com\">Jane Doe</maintainer> -->\n  <maintainer email=\"shaoguoliang@todo.todo\">shaoguoliang</maintainer>\n\n\n  <!-- One license tag required, multiple allowed, one license per tag -->\n  <!-- Commonly used license strings: -->\n  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->\n  <license>TODO</license>\n\n\n  <!-- Url tags are optional, but multiple are allowed, one per tag -->\n  <!-- Optional attribute type can be: website, bugtracker, or repository -->\n  <!-- Example: -->\n  <!-- <url type=\"website\">http://wiki.ros.org/ee3305_pid_control</url> -->\n\n\n  <!-- Author tags are optional, multiple are allowed, one per tag -->\n  <!-- Authors do not have to be maintainers, but could be -->\n  <!-- Example: -->\n  <!-- <author email=\"jane.doe@example.com\">Jane Doe</author> -->\n\n\n  <!-- The *depend tags are used to specify dependencies -->\n  <!-- Dependencies can be catkin packages or system dependencies -->\n  <!-- Examples: -->\n  <!-- Use depend as a shortcut for packages that are both build and exec dependencies -->\n  <!--   <depend>roscpp</depend> -->\n  <!--   Note that this is equivalent to the following: -->\n  <!--   <build_depend>roscpp</build_depend> -->\n  <!--   <exec_depend>roscpp</exec_depend> -->\n  <!-- Use build_depend for packages you need at compile time: -->\n  <!--   <build_depend>message_generation</build_depend> -->\n  <!-- Use build_export_depend for packages you need in order to build against this package: -->\n  <!--   <build_export_depend>message_generation</build_export_depend> -->\n  <!-- Use buildtool_depend for build tool packages: -->\n  <!--   <buildtool_depend>catkin</buildtool_depend> -->\n  <!-- Use exec_depend for packages you need at runtime: -->\n  <!--   <exec_depend>message_runtime</exec_depend> -->\n  <!-- Use test_depend for packages you need only for testing: -->\n  <!--   <test_depend>gtest</test_depend> -->\n  <!-- Use doc_depend for packages you need only for building documentation: -->\n  <!--   <doc_depend>doxygen</doc_depend> -->\n  <buildtool_depend>catkin</buildtool_depend>\n  <build_depend>roscpp</build_depend>\n  <build_depend>sensor_msgs</build_depend>\n  <build_depend>nav_msgs</build_depend>\n  <build_depend>geometry_msgs</build_depend>\n\n  <build_export_depend>roscpp</build_export_depend>\n  <build_export_depend>sensor_msgs</build_export_depend>\n  <build_export_depend>nav_msgs</build_export_depend>\n  <build_export_depend>geometry_msgs</build_export_depend>\n\n  <exec_depend>roscpp</exec_depend>\n  <exec_depend>sensor_msgs</exec_depend>\n  <exec_depend>nav_msgs</exec_depend>\n  <exec_depend>geometry_msgs</exec_depend>\n\n  <!-- <depend>visualization_msgs</depend> -->\n  <!-- The export tag contains other, unspecified, tags -->\n  <export>\n    <!-- Other tools can request additional information be placed here -->\n\n  </export>\n</package>\n",
+			"file": "package.xml",
+			"file_size": 3113,
+			"file_write_time": 132110118918554856,
+			"settings":
+			{
+				"buffer_size": 3122,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "launch/ee3305_pid_control.launch",
+			"settings":
+			{
+				"buffer_size": 872,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/BotControl.hpp",
+			"settings":
+			{
+				"buffer_size": 1681,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include \"BotControl.hpp\"\n#include <iostream>\n#include <ros/ros.h>\n// #include <visualization_msgs/Marker.h>\n\nusing namespace std;\nint main(int argc, char** argv){\n\n\tros::init(argc, argv, \"PID Control\");\n\tros::NodeHandle nodeHandle(\"~\");\n\t\n\t\n\n}",
+			"file": "src/pid_control_node.cpp",
+			"file_size": 243,
+			"file_write_time": 132110125112136208,
+			"settings":
+			{
+				"buffer_size": 244,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/BotControl.cpp",
+			"settings":
+			{
+				"buffer_size": 113,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"sub",
+				"Preferences: SublimeClang Settings – Default"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 206.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/shaoguoliang/ROSLearning/EE3305/ee3305_pid_control",
+		"/home/shaoguoliang/ROSLearning/EE3305/ee3305_pid_control/include",
+		"/home/shaoguoliang/ROSLearning/EE3305/ee3305_pid_control/launch",
+		"/home/shaoguoliang/ROSLearning/EE3305/ee3305_pid_control/worlds"
+	],
+	"file_history":
+	[
+		"/home/shaoguoliang/ROSLearning/husky_close_control/CMakeLists.txt",
+		"/home/shaoguoliang/ROSLearning/EE3305/pid_control/src/BotControl.cpp",
+		"/home/shaoguoliang/ROSLearning/EE3305/pid_control/CMakeLists.txt",
+		"/home/shaoguoliang/GitClone/msckf_vio/CMakeLists.txt",
+		"/home/shaoguoliang/GitClone/msckf_vio/nodelets.xml",
+		"/home/shaoguoliang/GitClone/msckf_vio/package.xml",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/package.xml",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/config/config.yaml",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/worlds/singlePillar.world",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/launch/bag_play.launch",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/husky_close_control.sublime-project",
+		"/home/shaoguoliang/ROSLearning/gtest_learn/testcd.cpp",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/src/HuskyCloseControl.cpp",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/include/husky_close_control/HuskyCloseControl.hpp",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/launch/close_control.launch",
+		"/home/shaoguoliang/ROSLearning/husky_close_control/src/husky_close_control_node.cpp",
+		"/home/shaoguoliang/ROSLearning/test_control/src/TestControl.cpp",
+		"/home/shaoguoliang/ROSLearning/test_control/include/test_control/TestControl.hpp",
+		"/home/shaoguoliang/ROSLearning/test_control/launch/test_control_launch.launch",
+		"/home/shaoguoliang/catkin_ws/src/teleop_twist_keyboard/teleop_twist_keyboard.py",
+		"/home/shaoguoliang/ROSLearning/test_control/config/config.yaml",
+		"/home/shaoguoliang/.config/sublime-text-3/Packages/User/SublimeClang.sublime-settings",
+		"/home/shaoguoliang/.config/sublime-text-3/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/home/shaoguoliang/ROSLearning/test_control/src/test_control_node.cpp",
+		"/home/shaoguoliang/.config/sublime-text-3/Packages/CHeaders/README.md",
+		"/home/shaoguoliang/.config/sublime-text-3/Packages/CHeaders/CHeaders.sublime-settings",
+		"/home/shaoguoliang/.config/sublime-text-3/Packages/User/CHeaders.sublime-settings",
+		"/home/shaoguoliang/ROSLearning/test_control/CMakeLists.txt",
+		"/home/shaoguoliang/ROSLearning/test_control/package.xml",
+		"/opt/ros/kinetic/share/husky_description/launch/description.launch",
+		"/opt/ros/kinetic/share/husky_gazebo/launch/spawn_husky.launch",
+		"/opt/ros/kinetic/share/husky_control/launch/control.launch",
+		"/home/shaoguoliang/catkin_ws/src/teleop_twist_keyboard/robocup_14.launch",
+		"/home/shaoguoliang/ROSLearning/Course1/mylaunch.launch",
+		"/home/shaoguoliang/catkin_ws/src/husky_highlevel_controller/src/husky_highlevel_controller_node.cpp",
+		"/home/shaoguoliang/catkin_ws/src/husky_highlevel_controller/src/HuskyHighlevelController.cpp",
+		"/home/shaoguoliang/catkin_ws/src/husky_highlevel_controller/config/default.yaml",
+		"/home/shaoguoliang/catkin_ws/src/husky_highlevel_controller/include/husky_highlevel_controller/HuskyHighlevelController.hpp",
+		"/home/shaoguoliang/catkin_ws/src/husky_highlevel_controller/src/mylaunch.launch",
+		"/home/shaoguoliang/ROSLearning/husky/husky_highlevel_controller/CMakeLists.txt",
+		"/home/shaoguoliang/ROSLearning/husky/husky_highlevel_controller/src/husky_highlevel_controller.cpp",
+		"/home/shaoguoliang/ROSLearning/husky/husky_highlevel_controller/package.xml",
+		"/home/shaoguoliang/ROSLearning/husky/husky_highlevel_controller/include/husky_highlevel_controller/husky_highlevel_controller.hpp",
+		"/home/shaoguoliang/ROSLearning/husky/husky_highlevel_controller/src/husky_highlevel_controller_node.cpp",
+		"/home/shaoguoliang/ROSLearning/Course2/CMakelists.txt",
+		"/home/shaoguoliang/ROSLearning/Course2/package.xml",
+		"/home/shaoguoliang/ROSLearning/Course2/include/husky_highlevel_controller/HuskyHighlevelController.hpp",
+		"/home/shaoguoliang/ROSLearning/Course2/src/husky_highlevel_controller_node.cpp",
+		"/home/shaoguoliang/ROSLearning/Course2/src/HuskyHighlevelController.cpp",
+		"/home/shaoguoliang/ROSLearning/Course2/include/rospackage/ros_package.hpp",
+		"/home/shaoguoliang/workspace/test_helloworld/main.cpp",
+		"/home/shaoguoliang/catkin_ws/src/teleop_twist_keyboard/package.xml"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/home/shaoguoliang/ROSLearning/EE3305/ee3305_pid_control"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "CMakeLists.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5539,
+								5539
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2700.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "package.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2951,
+								2951
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "launch/ee3305_pid_control.launch",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 872,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								637,
+								637
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "include/BotControl.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1681,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1649,
+								1649
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/pid_control_node.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 244,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/BotControl.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								113,
+								113
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 245.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

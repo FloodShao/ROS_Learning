@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+
+	"settings":
+	{
+		"sublimeclang_options":
+		[
+			"-I/home/shaoguoliang/ROSLearning/EE3305/ee3305_pid_control/src",
+			"-I/home/shaoguoliang/ROSLearning/EE3305/ee3305_pid_control/include",
+			"-I/opt/ros/kinetic/include"
+		]
+	}
+}

@@ -1,0 +1,9 @@
+Kp_f: 1
+Ki_f: 0.1
+Kd_f: 1
+Kp_a: 0.5
+Ki_a: 0.1
+Kd_a: 1
+target_distance: 0.1
+target_angle: 0
+dt: 0.1
