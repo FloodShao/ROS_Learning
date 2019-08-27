@@ -98,9 +98,9 @@ void BotControl::pidAlgorithm(){
 	} else{
 		trans_forward_ = 0;
 	}
-	// // set threshold
-	// if(trans_forward_ > 0.6) trans_forward_ = 0.6;
-	// if(trans_forward_ < -0.6) trans_forward_ = -0.6;
+	// set threshold
+	if(trans_forward_ > 0.6) trans_forward_ = 0.6;
+	if(trans_forward_ < -0.6) trans_forward_ = -0.6;
 
 	if(error_angle_ > 0.01){
 		trans_angle_ = Kp_a * error_angle_ + Ki_a * I_angle_ + Kd_a * D_angle_;
