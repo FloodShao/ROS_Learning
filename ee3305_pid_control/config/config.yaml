@@ -1,9 +1,9 @@
 Kp_f: 0.1
 Ki_f: 0
 Kd_f: 0.1
-Kp_a: 0.4
-Ki_a: 1
-Kd_a: 0.1
+Kp_a: 0.3
+Ki_a: 0
+Kd_a: 1
 target_distance: 0.8
 target_angle: 0
 dt: 0.1
