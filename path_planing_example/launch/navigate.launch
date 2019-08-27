@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+<node pkg="prj-grp-02" type="range_finder" name="range_finder">
+</node>
+<node pkg="prj-grp-02" type="path_planner" name="path_planner" output="screen">
+</node>
+<node pkg="prj-grp-02" type="navigator" name="navigator">
+</node>
+</launch>

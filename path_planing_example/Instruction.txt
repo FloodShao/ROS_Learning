@@ -1,0 +1,40 @@
+1. Open a terminal and create a catkin workspace with the name you want (replace "<name>" with the name you want):
+$ mkdir -p ~/<name>/src
+
+2. Extract the prj-grp-02 folder and copy it to the source file folder
+
+3. Inside your catkin workspace, run catkin_make:
+$ cd ~/<name>
+$ catkin_make
+
+4. Run project_init_world_1.sh or project_init_world_2.sh to lauch either test world 1 or test world 2:
+$ cd ~/<name>/src/prj-grp-02
+$ chmod +x project_init_world_1.sh
+$ ./project_init_world_1.sh
+
+or 
+$ cd ~/<name>/src/prj-grp-02
+$ chmod +x project_init_world_2.sh
+$ ./project_init_world_2.sh
+
+5. Open a new terminal.
+
+6. Before continuing, source your new setup.*sh file:
+$ cd ~/<name>
+$ source devel/setup.bash
+
+7. Launch the launch file navigate.launch to make the turtlebot navigate towards the goal:
+$ roslaunch prj-grp-02 navigate.launch 
+
+
+Before launching the navigate.launch file:
+// Be sure to have Armadillo installed before you launch the program
+
+1. If not present already, install LAPACK, Boost and BLAS with 
+$ sudo apt-get install liblapack-dev
+$ sudo apt-get install libblas-dev
+$ sudo apt-get install libboost-dev
+
+2. Install Armadillo using
+$ sudo apt-get install libarmadillo-dev
+
