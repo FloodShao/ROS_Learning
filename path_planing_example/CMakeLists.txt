@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(prj-grp-02)
+project(path_planing_example)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
