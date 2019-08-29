@@ -1,0 +1,654 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prive",
+				"privateValue\tabc"
+			],
+			[
+				"private",
+				"privateValue\tabc"
+			],
+			[
+				"String",
+				"StringTokenizer"
+			],
+			[
+				"In",
+				"InterruptedException"
+			],
+			[
+				"Int",
+				"IntWritable"
+			],
+			[
+				"con",
+				"convert_cartesian_to_polar\t(tools.h)"
+			],
+			[
+				"L",
+				"Learning_RATE"
+			],
+			[
+				"calculate_pd_output",
+				"calculate_pd_output_wrt_input"
+			],
+			[
+				"d_error",
+				"d_error_wrt_hidden_neuron_output"
+			],
+			[
+				"pd",
+				"pd_errors_wrt_output_neuron_total_net_input"
+			],
+			[
+				"n",
+				"neurons"
+			],
+			[
+				"hi",
+				"hidden_layer"
+			],
+			[
+				"training",
+				"training_outputs"
+			],
+			[
+				"calculate_pd",
+				"calculate_pd_error_wrt_total_net_input"
+			],
+			[
+				"N",
+				"Neuron"
+			],
+			[
+				"hidden",
+				"hidden_layer_weights"
+			],
+			[
+				"output",
+				"output_layer_weights"
+			],
+			[
+				"in",
+				"init_weights_from_inputs_to_hidden_layer_neurons"
+			],
+			[
+				"cost",
+				"cost_"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/range_detect_node.cpp",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "",
+			"file": "include/RangeDetect.hpp",
+			"file_size": 0,
+			"file_write_time": 132115209036855599,
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/RangeDetect.cpp",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 119.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				" inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 174.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/shaoguoliang/GitHub/ROS_Learning/ee3305_path_planing",
+		"/Users/shaoguoliang/GitHub/ROS_Learning/ee3305_path_planing/include"
+	],
+	"file_history":
+	[
+		"/Users/shaoguoliang/Desktop/Maze_Solving_Floodfill/Package/prj-grp-02/src/path_planner.cpp",
+		"/Users/shaoguoliang/Desktop/Maze_Solving_Floodfill/Package/prj-grp-02/src/range_finder.cpp",
+		"/Users/shaoguoliang/Desktop/Maze_Solving_Floodfill/Package/prj-grp-02/src/camera_operations.cpp",
+		"/Users/shaoguoliang/Desktop/Maze_Solving_Floodfill/Package/prj-grp-02/src/navigator.cpp",
+		"/Users/shaoguoliang/Desktop/Obstacle_Avoidance/obstacle_avoidance/src/obstacle_avoidance.cpp",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/layout.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/post.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/_config.yml",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE TIM 2019_2/paper_revision_2/jrnl_draft.tex",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/source/js/index.js",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/tags.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/_partial/head.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/archive.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/about.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/page.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/index.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/source/css/aircloud.css",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/source/_less/about.css",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/_partial/after_footer.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/layout/_partial/mathjax.ejs",
+		"/Users/shaoguoliang/log/readme.txt",
+		"/Users/shaoguoliang/Workspaces/MyEclipse 2017 CI/spark-rdd/data/secondarysort.txt",
+		"/Users/shaoguoliang/workspace/WordCount1/data/wordtext.txt",
+		"/Users/shaoguoliang/workspace/WordCount/data/wordtext.txt",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/source/css/gitment.css",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-fred/layout/post.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-fred/layout/_partial/article.ejs",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-fred/_config.yml",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/public/css/aircloud.css",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/themes/hexo-theme-aircloud/_config.yml",
+		"/Users/shaoguoliang/GitHub/Blog/themes/hexo-theme-aircloud/_config.yml",
+		"/Users/shaoguoliang/GitHub/Blog/_config.yml",
+		"/Users/shaoguoliang/GitHub/Blog/themes/hexo-theme-ace/_config.yml",
+		"/Users/shaoguoliang/GitHub/Blog/themes/landscape/_config.yml",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE TMTT special issue/latex-manuxcript/Reference.bib",
+		"/Users/shaoguoliang/Workspaces/MyEclipse 2017 CI/ch6-mr-dev/pom.xml",
+		"/Users/shaoguoliang/GitHub/Hadoop/hadoop-book/ch06-mr-dev/src/test/resources/expected.txt",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/hadoop_conf/pom.xml",
+		"/Users/shaoguoliang/GitHub/Hadoop/hadoop-book/ch06-mr-dev/src/main/examples/ConfigurationPrinterSystem.java.input.txt",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/hadoop_conf/hadoop_cluster.xml",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/hadoop_conf/hadoop_localhost.xml",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/hadoop_conf/hadoop_local.xml",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/_includes/table.html",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/css/bootstrap.min.css",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/css/highlight.css",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/_layouts/post.html",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/_layouts/index.html",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/_site/index.html",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/_includes/friend_links.html",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/index.html",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE TMTT special issue/latex-manuxcript/jrnl_draft.tex",
+		"/Users/shaoguoliang/GitHub/test-site/_config.yml",
+		"/Users/shaoguoliang/GitHub/test-site/navigation.yml",
+		"/Users/shaoguoliang/GitHub/test-site/Gemfile",
+		"/Users/shaoguoliang/GitHub/my-site/Gemfile",
+		"/Users/shaoguoliang/GitHub/my-site/my-new-site/_config.yml",
+		"/Users/shaoguoliang/GitHub/FloodShao.github.io/_data/navigation.yml",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/InstallPackage/hadoop-2.9.2-src/hadoop-client/pom.xml",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/InstallPackage/hadoop-2.9.2-src/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java",
+		"/Users/shaoguoliang/Workspaces/MyEclipse 2017 CI/wordcount1.0/src/com/fredshao/hadoop/WordCount.java",
+		"/Users/shaoguoliang/Workspaces/MyEclipse 2017 CI/wordcount1.0/src/com/fredshao/hadoop/IntSumReducer.java",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/InstallPackage/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/Mapper.java",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/wordcount01/TokenizerMapper.java",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/InstallPackage/hadoop-2.9.2-src/hadoop-project/pom.xml",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/InstallPackage/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapred/Mapper.java",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE TIM 2019_2/paper_revision/jrnl_draft.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/2019 APMC/Conference-LaTeX-template_7-9-18/conference_041818.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE TIM 2019_2/jrnl_draft.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE TIM 2019_2/reference.bib",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/2019 APMC/Conference-LaTeX-template_7-9-18/reference.bib",
+		"/Users/shaoguoliang/WorkFile/4_Publication/IEEE Sensor Journal_201812/Final Version/reference.bib",
+		"/Users/shaoguoliang/WorkFile/4_Publication/IEEE Sensor Journal_201812/Paper Revision/Resubmission-Sensors-24213-2018.pdf",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/Hadoop/hadoop-book-code/ch3/FileSystemCat.java",
+		"/Users/shaoguoliang/GitHub/Hadoop/hadoop-book/ch03-hdfs/pom.xml",
+		"/Users/shaoguoliang/GitHub/Hadoop/hadoop-book/ch02-mr-intro/src/main/java/MaxTemperatureMapper.java",
+		"/Users/shaoguoliang/GitHub/Hadoop/hadoop-book/ch02-mr-intro/src/main/java/MaxTemperatureReducer.java",
+		"/Users/shaoguoliang/GitHub/Hadoop/hadoop-book/ch02-mr-intro/src/main/java/MaxTemperatureWithCombiner.java",
+		"/Users/shaoguoliang/GitHub/Hadoop/hadoop-book/ch02-mr-intro/src/main/java/MaxTemperature.java",
+		"/Users/shaoguoliang/GitHub/Hadoop/hadoop-book/ch02-mr-intro/pom.xml",
+		"/Users/shaoguoliang/GitHub/Blogs/first_test_20190518.html",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE TIM 2019_2/paper_revision/reference.bib",
+		"/Users/shaoguoliang/WorkFile/4_Publication/IEEE Sensor Journal_201812/Paper Revision/IEEE_Sensors_Journal_201812.pdf",
+		"/Users/shaoguoliang/CarND-Project/SensorFusionTest/data/data-1.txt",
+		"/Users/shaoguoliang/CarND-Project/UKFBuild/data/out-original.txt",
+		"/Users/shaoguoliang/CarND-Project/UKFBuild/src/main.cpp",
+		"/Users/shaoguoliang/CarND-Project/SensorFusionTest/data/out-1.txt",
+		"/Users/shaoguoliang/CarND-Project/SensorFusion/src/tools.cpp",
+		"/Users/shaoguoliang/CarND-Project/SensorFusionTest/src/main.cpp",
+		"/Users/shaoguoliang/CarND-Project/SensorFusion/header/tools.h",
+		"/Users/shaoguoliang/CarND-Project/SensorFusionTest/project(SensorFusion)",
+		"/Users/shaoguoliang/CarND-Project/SensorFusion/CMakeLists.txt",
+		"/Users/shaoguoliang/CarND-Project/SensorFusion/SensorFusion/CMakeLists.txt",
+		"/Users/shaoguoliang/CarND-Project/SensorFusion/SensorFusion/header/tools.h",
+		"/Users/shaoguoliang/Desktop/ssh_all.sh",
+		"/Users/shaoguoliang/Desktop/eth0配置.txt",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/JAVA/JavaDevelopment/Section1/TestClass.java",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/JAVA/JavaDevelopment/Hello.java",
+		"/Users/shaoguoliang/WorkFile/7_DataApplication/JAVA/JavaDevelopment/Section1/HelloJava.java",
+		"/Users/shaoguoliang/WorkFile/4_Publication/IEEE Sensor Journal_201812/Final Version/FINAL VERSION.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE sensors journal_2019_2_NO.2/jrnl_draft.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE sensors journal_2019_2_NO.2/reference.bib",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE sensors journal_2019_2_NO.2/bare_jrnl-邵国亮的MacBook Pro.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE sensors journal_2019_2_NO.2/bare_jrnl.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE sensors journal_2019_2_NO.2/bare_jrnl.bbl",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/IEEE sensors journal/bare_jrnl.tex",
+		"/Users/shaoguoliang/WorkFile/4_Publication/NUS research documents/First paper_IEEE sensors journal/Response Letter/IEEE_TransComm_201808/bare_jrnl.tex",
+		"/Users/shaoguoliang/Downloads/IEEEtran/bare_jrnl.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/PaperSecond_Sensors Journal/Paper Revision/IEEE_Sensors_Journal_201812.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/PaperSecond_Sensors Journal/Paper Revision/reference_201809.bib",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/PaperSecond_Sensors Journal/Paper Revision/test.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/PaperSecond_Sensors Journal/Paper Revision/temp_table.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/PaperSecond_Sensors Journal/IEEE_transactions_instrumental_and_measurements.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/PaperSecond_Sensors Journal/Paper Revision/IEEE_transactions_instrumental_and_measurements.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE transaction on instrumental and measurements/IEEE_transactions_instrumental_and_measurements.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE sensors journal/IEEE_Sensors_Journal_201809/Resubmit_Version_201809/IEEE_Sensors_Journal_201809.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/Resubmit_Version_201809/IEEE_Sensors_Journal_201809.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE sensors journal/IEEE_Sensors_Journal_201809/Resubmit_Version_201809/reference_201809.bib",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE sensors journal/IEEE_Sensors_Journal_201809/Resubmit_Version_201809/reference.bib",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE sensors journal/IEEEtran/bare_jrnl.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE sensors journal/IEEE_Sensors_Journal_201809/bib.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE sensors journal/IEEE_Sensors_Journal_201809/Resubmit_Version_201809/IEEE_Sensors_Journal_201809.bbl",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE sensors journal/IEEE_Sensors_Journal_201809/Resubmit_Version_201809/bare_jrnl.tex",
+		"/Users/shaoguoliang/OneDrive/My research/NUS research documents/First paper_IEEE sensors journal/IEEEtran/bare_jrnl_transmag.tex",
+		"/Users/shaoguoliang/PycharmProjects/Kaggle/HousePricePre/data_explore.py",
+		"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/mnist.py",
+		"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow/examples/tutorials/mnist/mnist.py",
+		"/Users/shaoguoliang/Downloads/MAC X8/∞≤◊∞ΩÃ≥Ã.txt",
+		"/Users/shaoguoliang/OneDrive/Upload/993483.bib"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/range_detect_node.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "include/RangeDetect.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/RangeDetect.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 202.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 199.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"project": "ee3305_path_planing.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}

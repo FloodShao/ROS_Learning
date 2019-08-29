@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+
+	"settings":
+	{
+		"sublimeclang_options":
+		[
+			"-I/home/shaoguoliang/ROS_Learning/EE3305/ee3305_path_planing/src",
+			"-I/home/shaoguoliang/ROS_Learning/EE3305/ee3305_path_planing/include",
+			"-I/opt/ros/kinetic/include"
+		]
+	}
+
+}
