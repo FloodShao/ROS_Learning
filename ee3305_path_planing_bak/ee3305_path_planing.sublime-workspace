@@ -240,10 +240,7 @@
 	"buffers":
 	[
 		{
-			"contents": "{\n\t\"folders\":\n\t[\n\t\t{\n\t\t\t\"path\": \".\"\n\t\t}\n\t],\n\n\t\"settings\":\n\t{\n\t\t\"sublimeclang_options\":\n\t\t[\n\t\t\t\"-I/home/shaoguoliang/GitClone/ROS_Learning/EE3305/ee3305_path_planing/src\",\n\t\t\t\"-I/home/shaoguoliang/GitClone/ROS_Learning/EE3305/ee3305_path_planing/include\",\n\t\t\t\"-I/opt/ros/kinetic/include/*\"\n\t\t]\n\t}\n\n}\n",
 			"file": "ee3305_path_planing.sublime-project",
-			"file_size": 299,
-			"file_write_time": 132115344094599020,
 			"settings":
 			{
 				"buffer_size": 299,
@@ -252,10 +249,22 @@
 			}
 		},
 		{
-			"file": "src/RangeDetect.cpp",
+			"file": "include/RangeDetect.hpp",
 			"settings":
 			{
-				"buffer_size": 2423,
+				"buffer_size": 207,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include \"RangeDetect.hpp\"\n",
+			"file": "src/RangeDetect.cpp",
+			"file_size": 29,
+			"file_write_time": 132115349591230646,
+			"settings":
+			{
+				"buffer_size": 27,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -266,23 +275,6 @@
 			{
 				"buffer_size": 537,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/opt/ros/kinetic/share/husky_gazebo/launch/husky_empty_world_mylaunch.launch",
-			"settings":
-			{
-				"buffer_size": 2691,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/opt/ros/kinetic/share/husky_gazebo/launch/spawn_husky.launch",
-			"settings":
-			{
-				"buffer_size": 5101,
 				"line_ending": "Unix"
 			}
 		}
@@ -347,7 +339,6 @@
 	],
 	"file_history":
 	[
-		"/home/shaoguoliang/GitClone/ROS_Learning/ee3305_path_planing/include/RangeDetect.hpp",
 		"/home/shaoguoliang/.config/sublime-text-3/Packages/SublimeClang/SublimeClang.sublime-settings",
 		"/home/shaoguoliang/.config/sublime-text-3/Packages/User/SublimeClang.sublime-settings",
 		"/home/shaoguoliang/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
@@ -442,7 +433,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -477,11 +468,39 @@
 				},
 				{
 					"buffer": 1,
+					"file": "include/RangeDetect.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								191,
+								191
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "src/RangeDetect.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2423,
+						"buffer_size": 27,
 						"regions":
 						{
 						},
@@ -500,11 +519,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "/home/shaoguoliang/.config/sublime-text-3/Packages/User/SublimeClang.sublime-settings",
 					"semi_transient": false,
 					"settings":
@@ -516,8 +535,8 @@
 						"selection":
 						[
 							[
-								166,
-								166
+								528,
+								528
 							]
 						],
 						"settings":
@@ -531,66 +550,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/opt/ros/kinetic/share/husky_gazebo/launch/husky_empty_world_mylaunch.launch",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2691,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1880,
-								1880
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 480.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/opt/ros/kinetic/share/husky_gazebo/launch/spawn_husky.launch",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5101,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 761.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
