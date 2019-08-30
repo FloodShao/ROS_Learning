@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="ee3305_TL" type="talker_node" name="talker" output="screen"/>
+	<node pkg="ee3305_TL" type="listener_node" name="listener" output="screen"/>
+</launch>
