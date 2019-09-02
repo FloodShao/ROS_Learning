@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <node pkg="ee3305_path_planing" type="path_plan_node" name="path_plan_node" output="screen"
+	launch-prefix="gnome-terminal --command"/>
+  
+</launch>

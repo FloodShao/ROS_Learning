@@ -247,7 +247,6 @@
 			"settings":
 			{
 				"buffer_size": 299,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -275,6 +274,24 @@
 			{
 				"buffer_size": 2691,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/shaoguoliang/catkin_test/src/ee3305_TL/src/talker_node.cpp",
+			"settings":
+			{
+				"buffer_size": 1008,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "#include \"ros/ros.h\""
+			}
+		},
+		{
+			"file": "launch/range_detect_node.launch",
+			"settings":
+			{
+				"buffer_size": 328,
 				"line_ending": "Unix"
 			}
 		},
@@ -343,6 +360,7 @@
 	[
 		"/home/shaoguoliang/GitClone/ROS_Learning/ee3305_path_planing",
 		"/home/shaoguoliang/GitClone/ROS_Learning/ee3305_path_planing/include",
+		"/home/shaoguoliang/GitClone/ROS_Learning/ee3305_path_planing/launch",
 		"/home/shaoguoliang/GitClone/ROS_Learning/ee3305_path_planing/src"
 	],
 	"file_history":
@@ -442,7 +460,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -472,7 +490,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -500,7 +518,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -530,7 +548,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -560,11 +578,70 @@
 						"translation.y": 480.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "/home/shaoguoliang/catkin_test/src/ee3305_TL/src/talker_node.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1008,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								611,
+								611
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#include \"ros/ros.h\"",
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "launch/range_detect_node.launch",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "/opt/ros/kinetic/share/husky_gazebo/launch/spawn_husky.launch",
 					"semi_transient": false,
 					"settings":
@@ -590,7 +667,7 @@
 						"translation.y": 761.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

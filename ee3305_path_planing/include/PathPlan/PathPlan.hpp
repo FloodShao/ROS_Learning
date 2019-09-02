@@ -25,7 +25,7 @@ private:
   double dist_left_, dist_front_, dist_right_;
   
   // update the map
-  void checkWall();
+  
   void initializeWall();
   void setWall(int x, int y, int direction);
   void removeWall(int x, int y, int direction);
@@ -36,14 +36,18 @@ private:
   void odomCallback(const nav_msgs::OdometryConstPtr& odomMsg);
   
   //Djikstra Algorithm
-  mat path_map;
-  void initialize_path_map();
-  void update_path_map();
+  Mat<int> path_map;
+  bool path_map_initialized = false;
+  void initialize_path_map(); // set all the cell with 0
   
 public:
   
   PathPlan(ros::NodeHandle& nh);
   void spin();
+  
+  void checkWall();
+  void dijkstra();
+  
   
 };
 
