@@ -16,13 +16,14 @@ private:
   ros::Subscriber range_sub_;
   ros::Subscriber odom_sub_;
   ros::Publisher target_pub_;
-  ros::Publisher control_pub_;
-  
+  ros::Publisher curr_pub_;
   
   cube wall_map; // It's a 3d tensor (can create as row, col, slices)
   
   double pos_x_, pos_y_, ang_z_; //current robot position and orientation in euler angle
   double dist_left_, dist_front_, dist_right_;
+  
+  int goal_reached_;
   
   // update the map
   
@@ -36,9 +37,13 @@ private:
   void odomCallback(const nav_msgs::OdometryConstPtr& odomMsg);
   
   //Djikstra Algorithm
-  Mat<int> path_map;
-  bool path_map_initialized = false;
-  void initialize_path_map(); // set all the cell with 0
+  Mat<int> path_map_;
+  vec neighbor_value_ = vec(4, fill::zeros);
+  int target_x_, target_y_, target_x_prev_, target_y_prev_;
+  bool path_map_initialized_ = false;
+  void initializePathMap(); // set all the cell with 1000
+  void setNextDestCell(); // based on the current position, find the next heading cell
+  int getPathMapValue(int x, int y);
   
 public:
   

@@ -591,7 +591,8 @@
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
-      </model>
+      </model> 
+      
       <model name='grey_1wall_0'>
         <pose frame=''>3.5 6 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -632,6 +633,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      
       <model name='grey_1wall_90_clone_0'>
         <pose frame=''>2 4.45 0 0 -0 1.57</pose>
         <scale>1 1 1</scale>
@@ -762,7 +764,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='grey_1wall_90_clone_3'>
+      <!--<model name='grey_1wall_90_clone_3'>
         <pose frame=''>1.0000 0.450000 0.75 0 0 1.57</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -771,7 +773,7 @@
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
-      </model>
+      </model> !-->
       <model name='grey_1wall_90_std'>
         <pose frame=''>6 4.5 0 0 -0 1.57</pose>
         <scale>1 1 1</scale>
@@ -5566,7 +5568,7 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>0.969218 3.44623 0 0 -0 1.57</pose>
     </model>
-    <model name='grey_1wall_90_clone_3'>
+    <!--<model name='grey_1wall_90_clone_3'>
       <static>1</static>
       <link name='link'>
         <pose frame=''>0 0 0.75 0 -0 0</pose>
@@ -5668,7 +5670,7 @@
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>1.09651 0.646074 0 0 -0 1.57</pose>
-    </model>
+      </model> !-->
     <model name='grey_1wall_90_clone_2_clone'>
       <static>1</static>
       <link name='link'>

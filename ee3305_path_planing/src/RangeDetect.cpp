@@ -18,41 +18,42 @@ void RangeDetect::scanCallback(const sensor_msgs::LaserScan::ConstPtr& scanMsg)
 {
   scan_data_ = scanMsg->ranges;
   int scan_size = scan_data_.size();
-  int scan_mid_idx = scan_size / 2;
-  int scan_left_idx = scan_mid_idx + scan_size / 3; // 90 degrees to the front
-  int scan_right_idx = scan_mid_idx - scan_size / 3;
+  int scan_mid_idx = 0;
+  int scan_left_idx = scan_mid_idx + scan_size / 4; // 90 degrees to the front
+  int scan_right_idx = scan_mid_idx + scan_size * 3 / 4;
   
   scan_left_ = scan_data_[scan_left_idx];
   scan_right_ = scan_data_[scan_right_idx];
   scan_front_ = scan_data_[scan_mid_idx];
   
-  if(isnan(scan_left_)){ // left detects nothing
+  if(isinf(scan_left_)){ // left detects nothing
     if(!initialized_){ //haven't initialized
       scan_left_ = max_dist_;
-    } else if(scan_left_prev_ > 2){
-      scan_left_ = max_dist_;
+    //} else if(scan_left_prev_ > 2){
+    //  scan_left_ = max_dist_;
     } else{ //the distance is too small to be detected
-      scan_left_ = min_dist_;
+      scan_left_ = max_dist_;
     }
   }
   
-  if(isnan(scan_right_)){ // left detects nothing
+  if(isinf(scan_right_)){ // left detects nothing
     if(!initialized_){ //haven't initialized
       scan_right_ = max_dist_;
-    } else if(scan_right_prev_ > 2){
-      scan_right_ = max_dist_;
+    //} else if(scan_right_prev_ > 2){
+    //  scan_right_ = max_dist_;
     } else{ //the distance is too small to be detected
-      scan_right_ = min_dist_;
+      scan_right_ = max_dist_;
     }
+    
   }
   
-  if(isnan(scan_front_)){ // left detects nothing
+  if(isinf(scan_front_)){ // left detects nothing
     if(!initialized_){ //haven't initialized
       scan_front_ = max_dist_;
-    } else if(scan_front_prev_ > 2){
-      scan_front_ = max_dist_;
+    //} else if(scan_front_prev_ > 2){
+    //  scan_front_ = max_dist_;
     } else{ //the distance is too small to be detected
-      scan_front_ = min_dist_;
+      scan_front_ = max_dist_;
     }
   }
   

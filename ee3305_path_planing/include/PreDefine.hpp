@@ -15,7 +15,7 @@ typedef std::pair<int, int> coord;
 
 enum{UNDEFINED=-1, NORTH=0, EAST=1, SOUTH=2, WEST=3};
 enum{OPEN=0, WALL=1};
-enum{GOAL_NOT_REACH=4, GOAL_REACH=5};
+enum{GOAL_NOT_REACH=0, GOAL_REACH=1};
 
 coord GoalCoord(GOAL_X, GOAL_Y);
 coord startCoord(0, 0);

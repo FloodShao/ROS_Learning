@@ -4,6 +4,6 @@
 </node>
 <node pkg="path_planing_example" type="path_planner" name="path_planner" output="screen">
 </node>
-<node pkg="path_planing_example" type="navigator" name="navigator">
-</node>
+<!-- <node pkg="path_planing_example" type="navigator" name="navigator">
+</node> -->
 </launch>

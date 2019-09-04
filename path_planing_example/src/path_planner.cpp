@@ -218,6 +218,7 @@ void PathPlanner::callbackOdom( const nav_msgs::OdometryConstPtr& poseMsg){
 
     // Converting quaterninon to yaw angle:
     ang_z = -atan2((2.0 * (w*z + x*y)), (1.0 - 2.0 * (y*y + z*z)));
+    ROS_INFO("ang_Z:%f", ang_z/PI*180);
 
     cmd_x_y_yaw.x = pos_x;
     cmd_x_y_yaw.y = pos_y;

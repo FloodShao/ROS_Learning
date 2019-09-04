@@ -8,7 +8,7 @@ int main(int argc, char** argv){
   
   PathPlan PP(nh);
   
-  ros::spin();
+  PP.spin();
   
   return 0;
 }
