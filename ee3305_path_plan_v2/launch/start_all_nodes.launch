@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <node pkg="ee3305_path_plan_v2" type="range_detect_node" name="range_detect_node" output="screen" launch-prefix="gnome-terminal --command"/>
+  <node pkg="ee3305_path_plan_v2" type="path_plan_node" name="path_plan_node" output="screen"
+	launch-prefix="gnome-terminal --command"/>
+  <node pkg="ee3305_path_plan_v2" type="bot_control_node" name="bot_control_node" output="screen" />
+  <rosparam command="load" file="$(find ee3305_path_planing)/config/config.yaml"/>
+</launch>

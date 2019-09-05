@@ -10,7 +10,7 @@
 PathPlan::PathPlan(ros::NodeHandle& nh)
 {
   nh_ = nh;
-  range_sub_ = nh_.subscribe("/range_detect/distances", 1, &PathPlan::rangeCallback, this);
+  range_sub_ = nh_.subscribe("/range_pub", 1, &PathPlan::rangeCallback, this);
   odom_sub_ = nh_.subscribe("/odom", 1, &PathPlan::odomCallback, this);
   target_pub_ = nh_.advertise<geometry_msgs::Point>("/pathplan/target", 1);
   curr_pub_ = nh_.advertise<geometry_msgs::Point>("/pathplan/curr", 1);
@@ -77,7 +77,9 @@ void PathPlan::odomCallback(const nav_msgs::OdometryConstPtr& odomMsg)
   //wall_map.print();
   
   dijkstra();
-  setNextDestCell();
+  if(!goal_reached_){
+    setNextDestCell();
+  }
   
   geometry_msgs::Point target_point;
   geometry_msgs::Point curr_position;
@@ -100,14 +102,12 @@ void PathPlan::odomCallback(const nav_msgs::OdometryConstPtr& odomMsg)
 
 void PathPlan::rangeCallback(const std_msgs::Float32MultiArray& rangeMsg)
 {
-  dist_left_ = rangeMsg.data[0];
-  dist_front_ = rangeMsg.data[1];
-  dist_right_ = rangeMsg.data[2];
+  dist_north_ = rangeMsg.data[0];
+  dist_east_ = rangeMsg.data[1];
+  dist_south_ = rangeMsg.data[2];
+  dist_west_ = rangeMsg.data[3];
   
-  //ROS_INFO("Received dist: %f, %f, %f.", dist_left_, dist_front_, dist_right_);
-
 }
-
 
 
 /*
@@ -118,53 +118,35 @@ void PathPlan::checkWall()
   //in world frame
   int pos_x_int = (int)floor(pos_x_);
   int pos_y_int = (int)floor(pos_y_);
-  double ang_z_deg = ang_z_ * 180 / PI;
   
-  //ROS_INFO("In check wall, cell(%d, %d), ang_z_=%f", pos_x_int, pos_y_int, ang_z_deg);
-  
-  int direction = UNDEFINED; //it's the robot heading direction
-  
-  if(ang_z_deg > -MAX_ANGLE_DEVIATION && ang_z_deg < MAX_ANGLE_DEVIATION){
-    direction = EAST;
-  }
-  if(ang_z_deg > (90-MAX_ANGLE_DEVIATION) && ang_z_deg < (90+MAX_ANGLE_DEVIATION)){
-    direction = NORTH;
-  }
-  if(ang_z_deg > (180-MAX_ANGLE_DEVIATION) || ang_z_deg < (-180+MAX_ANGLE_DEVIATION)){
-    direction = WEST;
-  }
-  if(ang_z_deg > (-90-MAX_ANGLE_DEVIATION) && ang_z_deg < (-90+MAX_ANGLE_DEVIATION)){
-    direction = SOUTH;
+  if(dist_north_ < WALL_DETECT_DIST){
+    setWall(pos_x_int, pos_y_int, NORTH);
+  } 
+  if(dist_north_ > OPEN_DETECT_DIST){
+    removeWall(pos_x_int, pos_y_int, NORTH);
   }
   
-  ROS_INFO("pos_x_int: %d, pox_y_int: %d, direction: %d", pos_x_int, pos_y_int, direction);
-
-  
-  if(dist_front_ < WALL_DETECT_DIST && direction != UNDEFINED){
-    setWall(pos_x_int, pos_y_int, direction);
-  }
-  if(dist_front_ > OPEN_DETECT_DIST && direction != UNDEFINED){
-    removeWall(pos_x_int, pos_y_int, direction);
+  if(dist_east_ < WALL_DETECT_DIST){
+    setWall(pos_x_int, pos_y_int, EAST);
+  } 
+  if(dist_east_ > OPEN_DETECT_DIST){
+    removeWall(pos_x_int, pos_y_int, EAST);
   }
   
-  if(dist_left_ < WALL_DETECT_DIST && direction != UNDEFINED){
-    if(0 > direction-1) setWall(pos_x_int, pos_y_int, WEST);
-    else setWall(pos_x_int, pos_y_int, direction-1);
-  }
-  if(dist_left_ > OPEN_DETECT_DIST && direction != UNDEFINED){
-    if(0 > direction-1) removeWall(pos_x_int, pos_y_int, WEST);
-    else removeWall(pos_x_int, pos_y_int, direction-1);
+  if(dist_south_ < WALL_DETECT_DIST){
+    setWall(pos_x_int, pos_y_int, SOUTH);
+  } 
+  if(dist_south_ > OPEN_DETECT_DIST){
+    removeWall(pos_x_int, pos_y_int, SOUTH);
   }
   
-  if(dist_right_ < WALL_DETECT_DIST && direction !=UNDEFINED){
-    if(3 < direction+1) setWall(pos_x_int, pos_y_int, NORTH);
-    else setWall(pos_x_int, pos_y_int, direction+1);
+  if(dist_west_ < WALL_DETECT_DIST){
+    setWall(pos_x_int, pos_y_int, WEST);
+  } 
+  if(dist_west_ > OPEN_DETECT_DIST){
+    removeWall(pos_x_int, pos_y_int, WEST);
   }
-  if(dist_right_ > OPEN_DETECT_DIST && direction !=UNDEFINED){
-    if(3 < direction+1) removeWall(pos_x_int, pos_y_int, NORTH);
-    else removeWall(pos_x_int, pos_y_int, direction+1);
-  }
- 
+  
 }
 
 

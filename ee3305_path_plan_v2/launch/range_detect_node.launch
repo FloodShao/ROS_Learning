@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <node pkg="ee3305_path_plan_v2" type="range_detect_node" name="range_detect_node" output="screen"
+	launch-prefix="gnome-terminal --command"/>
+  
+</launch>

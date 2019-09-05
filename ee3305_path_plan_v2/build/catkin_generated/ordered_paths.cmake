@@ -1,0 +1,1 @@
+set(ORDERED_PATHS "include;/opt/ros/kinetic/include;/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp;/usr/include")
