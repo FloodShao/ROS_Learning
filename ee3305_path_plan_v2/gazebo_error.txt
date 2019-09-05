@@ -1,0 +1,8 @@
+[error] libcurl: (51) SSL: no alternative certificate subject name matches target host name 'api.ignitionfuel.org'
+[answer] You need to change ~/.ignition/fuel/config.yaml as following.
+
+    url: https://api.ignitionfuel.org
+
+to
+
+    url: https://api.ignitionrobotics.org
