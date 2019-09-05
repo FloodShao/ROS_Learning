@@ -4,12 +4,12 @@
 #define PI 3.14159265
 #define THRESHOLD_SWITCH 0.0025
 #define dt 0.1
-#define MAX_ANGLE_DEVIATION 3.0 //in degree
+#define MAX_ANGLE_DEVIATION 8 //in degree
 #define GRID_SIZE 9
 #define GOAL_X 4 //target position
 #define GOAL_Y 4 //target position
-#define WALL_DETECT_DIST 0.8
-#define OPEN_DETECT_DIST 1.0
+#define WALL_DETECT_DIST 1.0
+#define OPEN_DETECT_DIST 1.5
 
 typedef std::pair<int, int> coord; 
 

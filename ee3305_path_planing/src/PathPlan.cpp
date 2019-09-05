@@ -61,8 +61,8 @@ void PathPlan::odomCallback(const nav_msgs::OdometryConstPtr& odomMsg)
 {
   
   //use the first pose of husky as the original point, with front pointing to y axis
-  pos_y_ = odomMsg->pose.pose.position.x;
-  pos_x_ = odomMsg->pose.pose.position.y;
+  pos_y_ = odomMsg->pose.pose.position.y;
+  pos_x_ = odomMsg->pose.pose.position.x;
   
   ROS_INFO("Received /odom position (%f, %f).", pos_x_, pos_y_);
   
@@ -165,7 +165,7 @@ void PathPlan::checkWall()
     if(3 < direction+1) removeWall(pos_x_int, pos_y_int, NORTH);
     else removeWall(pos_x_int, pos_y_int, direction+1);
   }
-  
+ 
 }
 
 

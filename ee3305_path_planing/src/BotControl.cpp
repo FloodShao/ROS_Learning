@@ -18,6 +18,8 @@ BotControl::BotControl(ros::NodeHandle& nh)
   Kp_x = 0.5;
   Ki_x = 0.01;
   Kd_x = 0.09;
+
+  ROS_INFO("bot_control_node initialized successfully.");
   
 }
 
@@ -28,9 +30,12 @@ void BotControl::targetCallBack(const geometry_msgs::PointConstPtr& target_msg)
   target_y_ = target_msg->y;
   goal_reached_ = target_msg->z;
   
-  if(goal_reached_) return;
-  
-  controlPub();
+  if(goal_reached_) {
+    ROS_INFO("Goal Reached!");
+    return;
+  } else{
+    controlPub();
+  }
   
 }
 
@@ -73,15 +78,25 @@ void BotControl::controlPub()
   double D_heading = error_heading_prev_ - error_heading_;
   double D_pos = error_pos_prev_ - error_pos_;
   
-  if(fabs(error_heading_) > 0.2){
+  if(fabs(error_heading_) > 0.3){
     
     trans_x = 0;
-    trans_heading = -Kp_a * error_heading_- Ki_a * I_heading - Kd_a * D_heading;
+    trans_heading = Kp_a * error_heading_ + Ki_a * I_heading;
+
+    if(fabs(error_heading_) > 0.2){
+      trans_heading *= pow(1000, trans_heading);
+    }
     
   }else{
     //trans_heading = -Kp_a * error_heading_- Ki_a * I_heading - Kd_a * D_heading;
-    trans_x = Kp_x*error_pos_ + Ki_x * I_pos + Kd_x * D_pos;
-    trans_heading = 0;
+    if(fabs(error_pos_) > 0.2){
+      trans_x = Kp_x * error_pos_ + Ki_x * I_pos;
+      trans_x *= pow(2, trans_x);
+    }else{
+      trans_x = Kp_x * error_pos_ + Ki_x * I_pos;
+    }
+    trans_heading = Kp_a * error_heading_ + Ki_a * I_heading;
+    
   }
   
   
@@ -91,7 +106,7 @@ void BotControl::controlPub()
   if(trans_heading < -max_ang) trans_heading = -max_ang;
   
   geometry_msgs::Twist cmd;
-  cmd.linear.x = 0;
+  cmd.linear.x = trans_x;
   cmd.linear.y = 0;
   cmd.linear.z = 0;
   
