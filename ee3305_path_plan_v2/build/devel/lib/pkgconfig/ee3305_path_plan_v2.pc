@@ -1,8 +1,0 @@
-prefix=/home/shaoguoliang/GitClone/ROS_Learning/ee3305_path_plan_v2/build/devel
-
-Name: ee3305_path_plan_v2
-Description: Description of ee3305_path_plan_v2
-Version: 0.0.0
-Cflags: -I/home/shaoguoliang/GitClone/ROS_Learning/ee3305_path_plan_v2/include
-Libs: -L/home/shaoguoliang/GitClone/ROS_Learning/ee3305_path_plan_v2/build/devel/lib 
-Requires: roscpp sensor_msgs nav_msgs geometry_msgs std_msgs

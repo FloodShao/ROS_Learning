@@ -102,6 +102,8 @@ void RangeFinder::callback_range_finder(const sensor_msgs::LaserScan::ConstPtr& 
     scan_middle_prev = scan_middle;
     scan_right_prev = scan_right;
 
+    ROS_INFO("left:%f, middle:%f, right:%f", scan_left, scan_middle, scan_right);
+
     // Send the data to the path_planner node to update the wall map
     std_msgs::Float32MultiArray cmd_distances;
     cmd_distances.data.clear();

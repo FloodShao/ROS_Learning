@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: ee3305_path_plan_v2
-Description: Description of ee3305_path_plan_v2
-Version: 0.0.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib 
-Requires: roscpp sensor_msgs nav_msgs geometry_msgs std_msgs
