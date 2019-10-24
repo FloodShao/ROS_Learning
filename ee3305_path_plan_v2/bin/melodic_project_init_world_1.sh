@@ -3,6 +3,6 @@ sudo cp ../launch/turtlebot3_maze.launch /opt/ros/melodic/share/turtlebot3_gazeb
 export TURTLEBOT3_MODEL="burger"
 export INIT_X="0.5"
 export INIT_Y="0.5"
-export INIT_YAW="1.57"
+export INIT_YAW="0"
 roslaunch turtlebot3_gazebo turtlebot3_maze.launch
 

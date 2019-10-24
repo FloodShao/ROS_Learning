@@ -1,7 +1,7 @@
-Kp_a: 1000
-Ki_a: 200
-Kd_a: 0.1
-Kp_x: 1
-Ki_x: 2
-Kd_x: 0.1
-dt: 0.2
+Kp_a: 0.5
+Ki_a: 0.3
+Kd_a: 0.2
+Kp_x: 0.3
+Ki_x: 0.2
+Kd_x: 0.2
+dt: 0.05

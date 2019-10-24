@@ -45,6 +45,7 @@ void RangeDetect::scanCallback(const sensor_msgs::LaserScan::ConstPtr& scanMsg)
   scan_west_ = scan_data_[west_index];
   scan_south_ = scan_data_[south_index];
   
+  //Bug in here. When the scan_data < 0.1, it's also inf.
   if(isinf(scan_east_)) scan_east_ = max_dist_;
   if(isinf(scan_north_)) scan_north_ = max_dist_;
   if(isinf(scan_west_)) scan_west_ = max_dist_;

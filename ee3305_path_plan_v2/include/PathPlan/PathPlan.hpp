@@ -23,7 +23,8 @@ private:
   // for /odom
   double pos_x_, pos_y_, ang_z_; //current robot position and orientation in euler angle
   // for /range_pub
-  double dist_north_, dist_east_, dist_south_, dist_west_;
+  double max_range_ = 4.0;
+  double dist_north_ = max_range_, dist_east_ = max_range_, dist_south_ = max_range_, dist_west_ = max_range_;
   
   int goal_reached_;
   
@@ -51,7 +52,6 @@ public:
   
   PathPlan(ros::NodeHandle& nh);
   void spin();
-  
   void checkWall();
   void dijkstra();
   
