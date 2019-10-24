@@ -1,11 +1,13 @@
+<?xml version="1.0"?>
 <launch>
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="x_pos" default="$(env INIT_X)"/>
   <arg name="y_pos" default="$(env INIT_Y)"/>
   <arg name="YAW" default="$(env INIT_YAW)"/>
 
+
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/test_world_1.world"/>
+    <arg name="world_name" value="$(find ee3305_path_plan_v2)/worlds/test_world_1.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>

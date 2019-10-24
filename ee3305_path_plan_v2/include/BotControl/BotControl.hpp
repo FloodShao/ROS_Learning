@@ -16,18 +16,20 @@ private:
   void targetCallBack(const geometry_msgs::PointConstPtr& target_msg);
   void currCallBack(const geometry_msgs::PointConstPtr& curr_msg);
   
-  int target_x_, target_y_, goal_reached_;
+  int target_x_, target_y_, goal_reached_, target_x_prev_, target_y_prev_;
   double pos_x_, pos_y_, heading_;
   double error_pos_, error_pos_prev_, error_heading_, error_heading_prev_;
+  double I_pos_, I_heading_, D_pos_, D_heading_;
   
   double Kp_x, Ki_x, Kd_x, Kp_a, Ki_a, Kd_a;
   void controlPub();
+  bool flag = false;
   
   double PI = 3.1415926;
   double dt = 2;
   
-  double max_vel = 0.7;
-  double max_ang = PI;
+  double max_vel = 0.3;
+  double max_ang = PI / 10;
   
   
 public:
