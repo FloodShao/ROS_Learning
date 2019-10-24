@@ -16,7 +16,7 @@ private:
   void targetCallBack(const geometry_msgs::PointConstPtr& target_msg);
   void currCallBack(const geometry_msgs::PointConstPtr& curr_msg);
   
-  int target_x_, target_y_, goal_reached_, target_x_prev_, target_y_prev_;
+  int target_x_ = 0, target_y_ = 0, goal_reached_, target_x_prev_ = 0, target_y_prev_ = 0;
   double pos_x_, pos_y_, heading_;
   double error_pos_, error_pos_prev_, error_heading_, error_heading_prev_;
   double I_pos_, I_heading_, D_pos_, D_heading_;

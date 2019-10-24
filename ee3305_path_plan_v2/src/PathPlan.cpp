@@ -145,10 +145,10 @@ void PathPlan::checkWall()
     removeWall(pos_x_int, pos_y_int, EAST);
   }
   if(dist_east_ < SECOND_WALL_DETECT_DIST){
-    setWall(pos_x_int+1, pos_y_int, NORTH);
+    setWall(pos_x_int+1, pos_y_int, EAST);
   }
   if(dist_east_ > SECOND_OPEN_DETECT_DIST){
-    removeWall(pos_x_int+1, pos_y_int, NORTH);
+    removeWall(pos_x_int+1, pos_y_int, EAST);
   }
   
   //in south direction
@@ -159,10 +159,10 @@ void PathPlan::checkWall()
     removeWall(pos_x_int, pos_y_int, SOUTH);
   }
   if(dist_south_ < SECOND_WALL_DETECT_DIST){
-    setWall(pos_x_int, pos_y_int-1, NORTH);
+    setWall(pos_x_int, pos_y_int-1, SOUTH);
   }
   if(dist_south_ > SECOND_OPEN_DETECT_DIST){
-    removeWall(pos_x_int, pos_y_int-1, NORTH);
+    removeWall(pos_x_int, pos_y_int-1, SOUTH);
   }
 
   //in west direction
@@ -173,10 +173,10 @@ void PathPlan::checkWall()
     removeWall(pos_x_int, pos_y_int, WEST);
   }
   if(dist_west_ < SECOND_WALL_DETECT_DIST){
-    setWall(pos_x_int-1, pos_y_int, NORTH);
+    setWall(pos_x_int-1, pos_y_int, WEST);
   }
   if(dist_west_ > SECOND_OPEN_DETECT_DIST){
-    removeWall(pos_x_int-1, pos_y_int, NORTH);
+    removeWall(pos_x_int-1, pos_y_int, WEST);
   }
 
   
