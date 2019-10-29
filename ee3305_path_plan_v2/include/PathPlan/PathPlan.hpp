@@ -54,6 +54,7 @@ public:
   void spin();
   void checkWall();
   void dijkstra();
+  void aStar();
   
   
 };

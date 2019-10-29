@@ -7,6 +7,26 @@
  * Constructor
  */
 
+/*
+ * testing the Astar algorithm
+ */
+typedef struct {
+  int x, y, f, g, h;
+} node;
+
+struct compareNode{
+  bool operator() (const node &lhs, const node &rhs) const {
+    return lhs.f < rhs.f;
+  }
+};
+
+static int manhattenDist(node start, node end){
+  int x = abs(start.x - end.x);
+  int y = abs(start.y - end.y);
+  return x+y;
+}
+
+
 PathPlan::PathPlan(ros::NodeHandle& nh)
 {
   nh_ = nh;
@@ -444,6 +464,89 @@ int PathPlan::getPathMapValue(int x, int y)
   
 }
 
+void PathPlan::aStar()
+{
+  // make sure the goal cell has been put in the path_map
+  initializePathMap();
+  
+  mat closed_list(GRID_SIZE, GRID_SIZE, fill::zeros);
+  mat in_open_list(GRID_SIZE, GRID_SIZE, fill::zeros);
+  
+  int pos_x_int = (int)floor(pos_x_);
+  int pos_y_int = (int)floor(pos_y_);
+  int adj_f, adj_g, adj_h;
+  
+  int x_queue, y_queue; //tmp coord in queue
+
+  std::multiset<node, compareNode> open_list;
+  // std::vector<node> open_list;
+  node goal = {GOAL_X, GOAL_Y, 0, 0, 0}, min_node, curr_node = {pos_x_int, pos_y_int, -1, -1, -1};
+  open_list.insert(goal);
+  in_open_list(GOAL_X, GOAL_Y) = 1;
+  
+  while(!open_list.empty()){
+    // find node with min f in queue
+    auto it = open_list.begin();
+    min_node = *it;
+    // std::cout << min_node.x << endl;
+
+    // remove node from open list
+    in_open_list(min_node.x, min_node.y) = 0;
+
+    // add to closed list 
+    closed_list(min_node.x, min_node.y) = 1; 
+    
+    // explore adjacent cells to this node
+    for(int direction = NORTH; direction <= WEST; direction++){
+
+      // check if there are walls in that direction,
+      if(!hasWall(min_node.x, min_node.y, direction)){
+
+        // check if within bounds
+        if(direction == NORTH && min_node.x+1 < GRID_SIZE){
+          x_queue = min_node.x; y_queue = min_node.y+1;
+        }
+        if(direction == EAST && min_node.x+1 < GRID_SIZE){
+          x_queue = min_node.x+1; y_queue = min_node.y;
+        }
+        if(direction == SOUTH && min_node.y-1 >= 0){
+          x_queue = min_node.x; y_queue = min_node.y-1;
+        }
+        if(direction == WEST && min_node.x-1 >= 0){
+          x_queue = min_node.x-1; y_queue = min_node.y;
+        }
+
+        // ignore if in closed list
+        if(!closed_list(x_queue, y_queue)){
+          // create adj node
+          node adj_node;
+          adj_node.x = x_queue;
+          adj_node.y = y_queue;
+          adj_g = min_node.g + 1;
+          adj_h = manhattenDist(curr_node, adj_node);
+          adj_f = adj_g + adj_h;
+          adj_node.f = adj_f;
+          adj_node.g = adj_g;
+          adj_node.h = adj_h;
+          ROS_INFO("x_queue: %d, y_queue: %d", x_queue, y_queue);
+
+          // not in open list
+          if(!in_open_list(x_queue, y_queue)){
+            // add to open list
+
+            // ROS_INFO("Open list size: %d, adj_f: %d", open_list.size(), adj_node.f);
+            open_list.insert(adj_node);
+            in_open_list(x_queue, y_queue) = 1;
+          }
+
+          // update path_map
+          path_map_(x_queue, y_queue) = min(path_map_(x_queue, y_queue), adj_f);
+        }
+      }
+    }
+    open_list.erase(it);
+  }
+}
 
 
 
