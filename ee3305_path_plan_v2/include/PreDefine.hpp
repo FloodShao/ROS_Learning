@@ -31,9 +31,3 @@ typedef struct{
 } cell;
 
 cell Map[GRID_SIZE][GRID_SIZE];
-
-int manhattenDist(coord start, coord end){
-  int x = abs(start.first - end.first);
-  int y = abs(start.second - end.second);
-  return x+y;
-}
