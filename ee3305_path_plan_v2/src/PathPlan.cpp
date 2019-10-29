@@ -108,7 +108,13 @@ void PathPlan::rangeCallback(const std_msgs::Float32MultiArray& rangeMsg)
   // check the wall distribution and update the path map every time the robot localize itself
   checkWall();
   //wall_map.print();
-  dijkstra();
+
+  // Using dijkstra algorithm
+  // dijkstra();
+
+  // Using Astar algorithm
+  aStar();
+
   if(!goal_reached_){
     setNextDestCell();
   }
@@ -503,7 +509,7 @@ void PathPlan::aStar()
       if(!hasWall(min_node.x, min_node.y, direction)){
 
         // check if within bounds
-        if(direction == NORTH && min_node.x+1 < GRID_SIZE){
+        if(direction == NORTH && min_node.y+1 < GRID_SIZE){
           x_queue = min_node.x; y_queue = min_node.y+1;
         }
         if(direction == EAST && min_node.x+1 < GRID_SIZE){
@@ -528,12 +534,11 @@ void PathPlan::aStar()
           adj_node.f = adj_f;
           adj_node.g = adj_g;
           adj_node.h = adj_h;
-          ROS_INFO("x_queue: %d, y_queue: %d", x_queue, y_queue);
+          //ROS_INFO("x_queue: %d, y_queue: %d", x_queue, y_queue);
 
           // not in open list
           if(!in_open_list(x_queue, y_queue)){
             // add to open list
-
             // ROS_INFO("Open list size: %d, adj_f: %d", open_list.size(), adj_node.f);
             open_list.insert(adj_node);
             in_open_list(x_queue, y_queue) = 1;
