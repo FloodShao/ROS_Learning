@@ -470,6 +470,11 @@ int PathPlan::getPathMapValue(int x, int y)
   
 }
 
+/*
+aStar contrbutor: Chia Xiang Rong
+including the predefined set compare part
+Waiting to be tested
+*/
 void PathPlan::aStar()
 {
   // make sure the goal cell has been put in the path_map
