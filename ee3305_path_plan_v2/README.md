@@ -1,3 +1,12 @@
+# Bugs fixing (2019-10-30)
+1. Solving the problem of wrong wall detection due to the width of the wall in function checkWall()
+2. Solving the problem that some of the cells may not be reached in dijkstra due to the error detection of the wall.
+3. Solving the matrix overflow error when checking the visited_map and is_queued
+4. Optimize the pid control parameters
+5. Optimize the Wall detection threshold
+6. Addressing the condition of setting the wall in adjacent cell in setWall()
+Thanks Chia Xiang Rong for reporting some of the bugs.
+
 # Bugs fixing (2019-10-24)
 1. Optimize the pid control parameters
 2. Fix the bugs of path plan node, where the path_map only initialize at the very first stage, but in the following stage, the path_map get wrong distance.
