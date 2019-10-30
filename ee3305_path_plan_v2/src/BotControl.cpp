@@ -56,6 +56,14 @@ void BotControl::targetCallBack(const geometry_msgs::PointConstPtr& target_msg)
     if(error_pos_ <= 0.1) {
       target_x_prev_ = target_x_;
       target_y_prev_ = target_y_;
+      
+      error_pos_prev_ = 0;
+      error_heading_prev_ = 0;  
+      I_heading_ = 0;
+      I_pos_ = 0;
+      D_heading_ = 0;
+      D_pos_ = 0;
+
     }
     controlPub();
   }
@@ -102,7 +110,7 @@ void BotControl::controlPub()
   D_pos_ = (error_pos_ - error_pos_prev_) / dt;
   
   trans_heading = Kp_a * error_heading_ + Ki_a * I_heading_ + Kd_a * D_heading_;
-  if(fabs(error_heading_) > 0.1){
+  if(fabs(error_heading_) > 0.15){
     trans_x = 0;
   }else{
     trans_x = Kp_x * error_pos_ + Ki_x * I_pos_ + Kd_x * D_pos_;

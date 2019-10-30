@@ -115,6 +115,10 @@ void PathPlan::rangeCallback(const std_msgs::Float32MultiArray& rangeMsg)
   // Using Astar algorithm
   // aStar();
 
+  path_map_.print();
+
+  ROS_INFO("N:%f, E:%f, S:%f, W:%f", dist_north_, dist_east_, dist_south_, dist_west_);
+
   if(!goal_reached_){
     setNextDestCell();
   }
@@ -147,6 +151,8 @@ void PathPlan::checkWall()
   //in world frame
   int pos_x_int = (int)floor(pos_x_);
   int pos_y_int = (int)floor(pos_y_);
+
+  if(sqrt( pow((pos_x_ - (pos_x_int + 0.5)),2) + pow((pos_y_ - (pos_y_int + 0.5)),2) ) > 0.35) return;
   
   // in north direction
   if(dist_north_ < WALL_DETECT_DIST){
@@ -156,7 +162,7 @@ void PathPlan::checkWall()
   if(dist_north_ > OPEN_DETECT_DIST){
     removeWall(pos_x_int, pos_y_int, NORTH);
   }
-  if(dist_north_ < SECOND_WALL_DETECT_DIST){
+  if(dist_north_ < SECOND_WALL_DETECT_DIST && dist_north_ > OPEN_DETECT_DIST){
     setWall(pos_x_int, pos_y_int+1, NORTH);
   }
   if(dist_north_ > SECOND_OPEN_DETECT_DIST){
@@ -170,7 +176,7 @@ void PathPlan::checkWall()
   if(dist_east_ > OPEN_DETECT_DIST){
     removeWall(pos_x_int, pos_y_int, EAST);
   }
-  if(dist_east_ < SECOND_WALL_DETECT_DIST){
+  if(dist_east_ < SECOND_WALL_DETECT_DIST && dist_east_ > OPEN_DETECT_DIST){
     setWall(pos_x_int+1, pos_y_int, EAST);
   }
   if(dist_east_ > SECOND_OPEN_DETECT_DIST){
@@ -184,7 +190,7 @@ void PathPlan::checkWall()
   if(dist_south_ > OPEN_DETECT_DIST){
     removeWall(pos_x_int, pos_y_int, SOUTH);
   }
-  if(dist_south_ < SECOND_WALL_DETECT_DIST){
+  if(dist_south_ < SECOND_WALL_DETECT_DIST && dist_south_ > OPEN_DETECT_DIST){
     setWall(pos_x_int, pos_y_int-1, SOUTH);
   }
   if(dist_south_ > SECOND_OPEN_DETECT_DIST){
@@ -198,11 +204,15 @@ void PathPlan::checkWall()
   if(dist_west_ > OPEN_DETECT_DIST){
     removeWall(pos_x_int, pos_y_int, WEST);
   }
-  if(dist_west_ < SECOND_WALL_DETECT_DIST){
+  if(dist_west_ < SECOND_WALL_DETECT_DIST && dist_west_ > OPEN_DETECT_DIST){
     setWall(pos_x_int-1, pos_y_int, WEST);
   }
   if(dist_west_ > SECOND_OPEN_DETECT_DIST){
     removeWall(pos_x_int-1, pos_y_int, WEST);
+  }
+
+  for(int direction = NORTH; direction <= WEST; direction++){
+    hasWall(pos_x_int, pos_y_int, direction);
   }
 
   
@@ -216,7 +226,7 @@ void PathPlan::setWall(int x, int y, int direction)
     return;
   }
   wall_map(x, y, direction) = WALL;
-  ROS_INFO("Wall in %d", direction);
+  //ROS_INFO("Wall in %d", direction);
   
   // fill wall to adjacent cells
   
@@ -249,7 +259,8 @@ bool PathPlan::hasWall(int x, int y, int direction)
     return true; //return with positive wall
   }
   if(wall_map(x, y, direction) == WALL) {
-    //ROS_INFO("Cell(%d, %d, %d) has Wall in the map!", x, y, direction);
+    ROS_INFO("Cell(%d, %d) has Wall %d", x, y, direction);
+
     return true;
   }
   else return false;
@@ -263,6 +274,23 @@ void PathPlan::removeWall(int x, int y, int direction)
   }
   wall_map(x, y, direction) = OPEN;
   //ROS_INFO("Remove Wall for Cell(%d, %d, %d).", x, y, direction);
+  if(direction == NORTH){
+    if(y+1 < GRID_SIZE) wall_map(x, y+1, SOUTH) = OPEN;
+    return;
+  }
+  if(direction == SOUTH){
+    if(y-1 >= 0) wall_map(x, y-1, NORTH) = OPEN;
+    return;
+  }
+  if(direction == WEST){
+    if(x-1 >= 0) wall_map(x-1, y, EAST) = OPEN;
+    return;
+  }
+  if(direction == EAST){
+    if(x+1 < GRID_SIZE) wall_map(x+1, y, WEST) = OPEN;
+    return;
+  }
+
 }
 
 
@@ -312,6 +340,7 @@ void PathPlan::dijkstra()
   
   std::vector<pair<int, int>> reached_queue;
   reached_queue.push_back(pair<int, int>(GOAL_X, GOAL_Y));
+  is_queued(GOAL_X, GOAL_Y) = 1;
   
   int nVisited = 0;
   int nCells = GRID_SIZE * GRID_SIZE;
@@ -320,60 +349,75 @@ void PathPlan::dijkstra()
   
   int x_queue, y_queue; //tmp coord in queue
   
-  while(nVisited < nCells){
+  while(accu(visited_map) != accu(is_queued)){
     int min_dist = 1000;
     int queue_length = reached_queue.size();
     //ROS_INFO("queue length: %d", queue_length);
-    
+
+    node = reached_queue[0];
     for(int i = 0; i<queue_length; i++){
       pair<int, int> tmp = reached_queue[i];
       //find the minimum goal distance node that hasn't been visited
-      if(visited_map.at(tmp.first, tmp.second) == 0){
-	if(path_map_(tmp.first, tmp.second) < min_dist){
-	  min_dist = path_map_.at(tmp.first, tmp.second);
-	  node = tmp;
-	}
+      if(visited_map(tmp.first, tmp.second) == 0){
+      	if(path_map_(tmp.first, tmp.second) <= min_dist){
+      	  min_dist = path_map_(tmp.first, tmp.second);
+      	  node = tmp;
+      	}
       }
+      // int vi = visited_map(tmp.first, tmp.second);
+      // ROS_INFO("tmp: x:%d, y:%d, visited: %d", tmp.first, tmp.second, vi);
+
     }
     
-    visited_map(node.first, node.second) = 1; //this node has been reached
-    //visited_map.print();
-    nVisited++;
-    //ROS_INFO("Add %d nodes. min_dist: %d", nVisited, min_dist);
+    if(visited_map(node.first, node.second) == 0){
+      visited_map(node.first, node.second) = 1; //this node has been reached
+      //visited_map.print();
+      nVisited++;
+      //ROS_INFO("Add %d nodes. min_dist: %d", nVisited, min_dist);
+    } else{
+      ROS_ERROR("The path map update has fell into a deadloop!");
+      ROS_ERROR("node_X: %d, nodex_Y: %d, queue_size: %d, nVisited: %d", 
+        node.first, node.second, queue_length, nVisited);
+      int sum = accu(visited_map);
+      ROS_ERROR("visited_sum:%d", sum);
+      std::getchar();
+    }
+
     
     // extend to adjacent cells to this node
     for(int direction = NORTH; direction <= WEST; direction++){
       
-	if(!hasWall(node.first, node.second, direction)){
-	  // there is no wall on that direction, and the adjacent node hasn't been put in the queue_length
+    	if(!hasWall(node.first, node.second, direction)){
+    	  // there is no wall on that direction, and the adjacent node hasn't been put in the queue_length
+    	  
+    	  if(direction == NORTH && node.second+1 < GRID_SIZE){
+    	    x_queue = node.first; y_queue = node.second+1;
+    	  }
+    	  if(direction == EAST && node.first+1 < GRID_SIZE){
+    	    x_queue = node.first+1; y_queue = node.second;
+    	  }
+    	  if(direction == SOUTH && node.second-1 >= 0){
+    	    x_queue = node.first; y_queue = node.second-1;
+    	  }
+    	  if(direction == WEST && node.first-1 >= 0){
+    	    x_queue = node.first-1; y_queue = node.second;
+    	  }
+    	  
+        if(x_queue >= 0 && x_queue < GRID_SIZE && y_queue>=0 && y_queue < GRID_SIZE){
+          if(!is_queued(x_queue, y_queue)){
+            // put the adjacent cell in the queue
+            reached_queue.push_back(pair<int, int>(x_queue, y_queue));
+            is_queued(x_queue, y_queue) = 1;
+          }
+          
+          // update the path_map, update the shortest path to goal
+          path_map_(x_queue, y_queue) = min(path_map_(x_queue, y_queue), min_dist+1);
+          
+        }
 	  
-	  if(direction == NORTH && node.second+1 < GRID_SIZE){
-	    x_queue = node.first; y_queue = node.second+1;
-	  }
-	  if(direction == EAST && node.first+1 < GRID_SIZE){
-	    x_queue = node.first+1; y_queue = node.second;
-	  }
-	  if(direction == SOUTH && node.second-1 >= 0){
-	    x_queue = node.first; y_queue = node.second-1;
-	  }
-	  if(direction == WEST && node.first-1 >= 0){
-	    x_queue = node.first-1; y_queue = node.second;
-	  }
-	  
-    if(x_queue >= 0 && x_queue < GRID_SIZE && y_queue>=0 && y_queue < GRID_SIZE){
-      if(!is_queued(x_queue, y_queue)){
-        // put the adjacent cell in the queue
-        reached_queue.push_back(pair<int, int>(x_queue, y_queue));
-        is_queued(x_queue, y_queue) = 1;
-      }
-      
-      // update the path_map, update the shortest path to goal
-      path_map_(x_queue, y_queue) = min(path_map_(x_queue, y_queue), min_dist+1);
-      
-    }
-	  
-	  //ROS_INFO("%d no wall. (%d, %d) path_map is %d", direction, x_queue, y_queue, path_map(x_queue, y_queue));
-	} 
+    	  //ROS_INFO("%d no wall. (%d, %d) path_map is %d", direction, x_queue, y_queue, path_map(x_queue, y_queue));
+    	} 
+
     }
     //test print the path_map
     //path_map_.print();

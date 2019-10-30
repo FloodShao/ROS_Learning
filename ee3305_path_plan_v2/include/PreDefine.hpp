@@ -8,10 +8,10 @@
 #define GRID_SIZE 9
 #define GOAL_X 8 //target position
 #define GOAL_Y 1 //target position
-#define WALL_DETECT_DIST 1.0
-#define OPEN_DETECT_DIST 1.5
-#define SECOND_WALL_DETECT_DIST 2.0
-#define SECOND_OPEN_DETECT_DIST 2.5
+#define WALL_DETECT_DIST 0.8
+#define OPEN_DETECT_DIST 1.0
+#define SECOND_WALL_DETECT_DIST 1.8
+#define SECOND_OPEN_DETECT_DIST 2.0
 
 typedef std::pair<int, int> coord; 
 
