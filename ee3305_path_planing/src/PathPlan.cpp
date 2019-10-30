@@ -316,15 +316,17 @@ void PathPlan::dijkstra()
 	    x_queue = node.first-1; y_queue = node.second;
 	  }
 	  
-	  if(!is_queued(x_queue, y_queue)){
-	    // put the adjacent cell in the queue
-	    reached_queue.push_back(pair<int, int>(x_queue, y_queue));
-	    is_queued(x_queue, y_queue) = 1;
-	  }
-	  
-	  // update the path_map, update the shortest path to goal
-	  path_map_(x_queue, y_queue) = min(path_map_(x_queue, y_queue), min_dist+1);
-	  
+    if(x_queue >=0 && x_queue < GRID_SIZE && y_queue >=0 && y_queue < GRID_SIZE){
+      if(!is_queued(x_queue, y_queue)){
+        // put the adjacent cell in the queue
+        reached_queue.push_back(pair<int, int>(x_queue, y_queue));
+        is_queued(x_queue, y_queue) = 1;
+      }
+      
+      // update the path_map, update the shortest path to goal
+      path_map_(x_queue, y_queue) = min(path_map_(x_queue, y_queue), min_dist+1);
+    }
+	  	  
 	  //ROS_INFO("%d no wall. (%d, %d) path_map is %d", direction, x_queue, y_queue, path_map(x_queue, y_queue));
 	}
 	

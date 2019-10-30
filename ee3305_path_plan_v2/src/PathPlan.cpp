@@ -110,10 +110,10 @@ void PathPlan::rangeCallback(const std_msgs::Float32MultiArray& rangeMsg)
   //wall_map.print();
 
   // Using dijkstra algorithm
-  // dijkstra();
+  dijkstra();
 
   // Using Astar algorithm
-  aStar();
+  // aStar();
 
   if(!goal_reached_){
     setNextDestCell();
@@ -211,7 +211,7 @@ void PathPlan::checkWall()
 
 void PathPlan::setWall(int x, int y, int direction)
 {
-  if(x<0 || y <0 || direction <0){
+  if(x<0 || y <0 || direction <0 || x>= GRID_SIZE || y >= GRID_SIZE){
     ROS_ERROR("setWall function input with illegal: x:%d, y:%d, direction:%d", x, y, direction);
     return;
   }
@@ -244,7 +244,7 @@ void PathPlan::setWall(int x, int y, int direction)
 
 bool PathPlan::hasWall(int x, int y, int direction)
 {
-  if(x<0 || y<0 || direction<0){
+  if(x<0 || y<0 || direction<0 || x>= GRID_SIZE || y >= GRID_SIZE){
     ROS_ERROR("hasWall get an illegal input: x:%d, y:%d, direction:%d", x, y, direction);
     return true; //return with positive wall
   }
@@ -257,7 +257,7 @@ bool PathPlan::hasWall(int x, int y, int direction)
 
 void PathPlan::removeWall(int x, int y, int direction)
 {
-  if(x<0 || y<0 || direction<0){
+  if(x<0 || y<0 || direction<0 || x>= GRID_SIZE || y >= GRID_SIZE){
     ROS_ERROR("removeWall get an illegal input: x:%d, y:%d, direction:%d", x, y, direction);
     return;
   }
@@ -274,16 +274,16 @@ void PathPlan::initializeWall()
   for(int row = 0; row < GRID_SIZE; row++){
     for(int col = 0; col < GRID_SIZE; col++){
       if(row == 0){
-	wall_map(row, col, SOUTH) = WALL;
-      }
-      if(row == GRID_SIZE-1){
-	wall_map(row, col, NORTH) = WALL;
-      }
-      if(col == 0){
 	wall_map(row, col, WEST) = WALL;
       }
-      if(col == GRID_SIZE-1){
+      if(row == GRID_SIZE-1){
 	wall_map(row, col, EAST) = WALL;
+      }
+      if(col == 0){
+	wall_map(row, col, SOUTH) = WALL;
+      }
+      if(col == GRID_SIZE-1){
+	wall_map(row, col, NORTH) = WALL;
       }
     }
   }
@@ -360,14 +360,17 @@ void PathPlan::dijkstra()
 	    x_queue = node.first-1; y_queue = node.second;
 	  }
 	  
-	  if(!is_queued(x_queue, y_queue)){
-	    // put the adjacent cell in the queue
-	    reached_queue.push_back(pair<int, int>(x_queue, y_queue));
-	    is_queued(x_queue, y_queue) = 1;
-	  }
-	  
-	  // update the path_map, update the shortest path to goal
-	  path_map_(x_queue, y_queue) = min(path_map_(x_queue, y_queue), min_dist+1);
+    if(x_queue >= 0 && x_queue < GRID_SIZE && y_queue>=0 && y_queue < GRID_SIZE){
+      if(!is_queued(x_queue, y_queue)){
+        // put the adjacent cell in the queue
+        reached_queue.push_back(pair<int, int>(x_queue, y_queue));
+        is_queued(x_queue, y_queue) = 1;
+      }
+      
+      // update the path_map, update the shortest path to goal
+      path_map_(x_queue, y_queue) = min(path_map_(x_queue, y_queue), min_dist+1);
+      
+    }
 	  
 	  //ROS_INFO("%d no wall. (%d, %d) path_map is %d", direction, x_queue, y_queue, path_map(x_queue, y_queue));
 	} 
@@ -475,6 +478,7 @@ aStar contrbutor: Chia Xiang Rong
 including the predefined set compare part
 Waiting to be tested
 */
+/*
 void PathPlan::aStar()
 {
   // make sure the goal cell has been put in the path_map
@@ -557,6 +561,7 @@ void PathPlan::aStar()
     open_list.erase(it);
   }
 }
+*/
 
 
 
