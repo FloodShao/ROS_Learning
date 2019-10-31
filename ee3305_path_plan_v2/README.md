@@ -6,6 +6,8 @@
 5. Optimize the Wall detection threshold
 6. Addressing the condition of setting the wall in adjacent cell in setWall()
 Thanks Chia Xiang Rong for reporting some of the bugs.
+7. Changing the launching world bash file. Avoid copying the world file in the system ROS package folder.
+
 
 # Bugs fixing (2019-10-24)
 1. Optimize the pid control parameters
@@ -13,6 +15,17 @@ Thanks Chia Xiang Rong for reporting some of the bugs.
 3. Fix the box_init and bot_goal in the world file, which have the height of 0.1m, and could get the robot stuck at the edge.
 
 # Instruction
+(2019-10-24 Version)
+To run this program:
+1. clone the original code to your catkin workspace
+2. run the bash file to install the dependencies ./bin/install_turtlebot3.sh (remember to change the ros version)
+2. catkin build this package
+3. run the bash file in ./bin/launch_world.sh
+4. wait gazebo to start the environment
+5. launch ./launch/start_all_nodes.launch
+
+
+(No longer valid)
 To run this program:
 1. clone the original code to your catkin workspace
 2. catkin build this package

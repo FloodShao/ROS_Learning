@@ -11,4 +11,9 @@ To run the code:
 3. Install the package husky simulator, as I mentioned in the pdf. Using cmd `sudo apt-get install ros-<distro>-husky-simulator`, and remember to replace the `<distro>` to your ros version. i.e. if you are using kinetic, replace `<distro>` with kinetic.
 4. The rest should be the same. Build the package, and using `roslaunch` to launch the environment and the node generated. The launch file is in the launch folder.
 
+## ee3305_path_plan_v2
+
+This folder contains the source code for path plan coded by Guoliang.
+
+Please refer to the README.md in the ee3305_path_plan_v2 folder.
 
